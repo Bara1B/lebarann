@@ -5,6 +5,7 @@ const sparkleLayer = document.getElementById("sparkle-layer");
 const openEnvelopeBtn = document.getElementById("open-envelope-btn");
 const envelopeScene = document.getElementById("envelope-scene");
 const greetingCard = document.getElementById("greeting-card");
+const backgroundMusic = document.getElementById("background-music");
 
 const messageText =
   "Di hari yang suci ini, aku ingin minta maaf atas semua salahku, baik yang sengaja maupun tidak. Semoga Allah melimpahkan kebahagiaan, kesehatan, dan keberkahan untukmu, Luthfiana. Terima kasih sudah hadir dan membuat hariku lebih indah. Selamat Idul Fitri 1447 H, sayang.";
@@ -77,6 +78,7 @@ openEnvelopeBtn.addEventListener("click", () => {
   openEnvelopeBtn.disabled = true;
   openEnvelopeBtn.textContent = "Amplop Dibuka";
   envelopeScene.classList.add("opening");
+  backgroundMusic.play().catch(() => {});
 
   setTimeout(() => {
     envelopeScene.classList.add("done");
