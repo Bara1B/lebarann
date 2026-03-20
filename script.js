@@ -6,6 +6,10 @@ const openEnvelopeBtn = document.getElementById("open-envelope-btn");
 const envelopeScene = document.getElementById("envelope-scene");
 const greetingCard = document.getElementById("greeting-card");
 const backgroundMusic = document.getElementById("background-music");
+const qrBtn = document.getElementById("qr-btn");
+const qrModal = document.getElementById("qr-modal");
+const qrCloseBtn = document.getElementById("qr-close-btn");
+const qrModalBackdrop = document.getElementById("qr-modal-backdrop");
 
 const messageText =
   "Di hari yang suci ini, aku ingin minta maaf atas semua salahku, baik yang sengaja maupun tidak. Semoga Allah melimpahkan kebahagiaan, kesehatan, dan keberkahan untukmu, Luthfiana. Terima kasih sudah hadir dan membuat hariku lebih indah. Selamat Idul Fitri 1447 H, sayang.";
@@ -67,6 +71,28 @@ replayBtn.addEventListener("click", () => {
 
 sparkleBtn.addEventListener("click", () => {
   spawnSparkles(34);
+});
+
+function openQRModal() {
+  qrModal.classList.add("is-open");
+  qrModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeQRModal() {
+  qrModal.classList.remove("is-open");
+  qrModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "auto";
+}
+
+qrBtn.addEventListener("click", openQRModal);
+qrCloseBtn.addEventListener("click", closeQRModal);
+qrModalBackdrop.addEventListener("click", closeQRModal);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && qrModal.classList.contains("is-open")) {
+    closeQRModal();
+  }
 });
 
 openEnvelopeBtn.addEventListener("click", () => {

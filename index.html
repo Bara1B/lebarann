@@ -36,7 +36,8 @@
 
       <div class="actions">
         <button id="replay-btn" type="button">Putar Ulang Ucapan</button>
-        <button id="sparkle-btn" type="button">Kirim Doa Lagi</button>
+        <button id="sparkle-btn" type="button">🤲</button>
+        <button id="qr-btn" type="button">THR Buat My kisah</button>
       </div>
 
       <p class="signature">Dengan cinta, selalu untukmu.</p>
@@ -44,6 +45,15 @@
   </main>
 
   <div id="sparkle-layer" aria-hidden="true"></div>
+
+  <div id="qr-modal" class="qr-modal" aria-label="Modal QR Code untuk THR" aria-hidden="true">
+    <div class="qr-modal-backdrop" id="qr-modal-backdrop"></div>
+    <div class="qr-modal-content">
+      <button id="qr-close-btn" type="button" class="qr-close-btn" aria-label="Tutup modal">✕</button>
+      <p class="qr-label">Scan untuk Kirim THR:</p>
+      <img id="qr-image" src="1.jpeg" alt="QR Code untuk kirim THR" loading="lazy" />
+    </div>
+  </div>
 
   <audio id="background-music" preload="auto">
     <source src="lebaran.mp3" type="audio/mpeg" />
